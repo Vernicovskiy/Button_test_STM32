@@ -4,7 +4,11 @@
 #define LED_OFF() GPIOA->BSRR = GPIO_BSRR_BR5;
 
 
-	__IO uint32_t Tim10_Count = 0;
+	//uint8_t res = 0;
+	uint32_t count = 0;
+	uint32_t ref_count = 3;
+	uint32_t state = 0;
+
 
 
 	void gpio_init(){
@@ -18,6 +22,38 @@
 
 	}
 
+	uint8_t Debounce_Handler(uint32_t state){
+
+		if (state == 0){
+
+			if (count < ref_count){
+				count++;
+				return 0;
+			}
+
+			else {
+					return 1;		// button pressed
+				}
+			}
+
+		else {
+				if (count > 0){
+					count--;
+					return 1;
+				}
+
+				else {
+
+					if (state != 0){
+						return 0;
+					}
+				}
+
+		}
+
+		}
+
+
 
 	int main(void){
 
@@ -25,7 +61,10 @@
 
 
 		while(1){
-			if (!READ_BIT(GPIOC->IDR, GPIO_IDR_ID13)){
+
+			state = READ_BIT(GPIOC->IDR, GPIO_IDR_ID13);
+
+			if (Debounce_Handler(state) == 1){
 				LED_ON();
 			}
 			else {

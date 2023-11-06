@@ -60,8 +60,8 @@ all: main-build
 main-build: Debounce_Button.elf secondary-outputs
 
 # Tool invocations
-Debounce_Button.elf Debounce_Button.map: $(OBJS) $(USER_OBJS) D:\WORK\WORKSPACE\ for\ CUBE\ IDE\ 1.13.2\Debounce_Button\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Debounce_Button.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\WORK\WORKSPACE for CUBE IDE 1.13.2\Debounce_Button\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Debounce_Button.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Debounce_Button.elf Debounce_Button.map: $(OBJS) $(USER_OBJS) D:\Nero\Button_test_STM32\Debounce_Button\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Debounce_Button.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Nero\Button_test_STM32\Debounce_Button\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Debounce_Button.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
