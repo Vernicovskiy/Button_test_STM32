@@ -1,4 +1,8 @@
 D:/Nero/Button_test_STM32/Debounce_Button/CMSIS/inc/core_cm4.h:1688:22:__NVIC_EnableIRQ	16	static
-../Src/main.c:21:7:exti_init	8	static
-../Src/main.c:33:7:EXTI15_10_IRQHandler	4	static
-../Src/main.c:40:6:main	8	static,ignoring_inline_asm
+D:/Nero/Button_test_STM32/Debounce_Button/CMSIS/inc/core_cm4.h:1724:22:__NVIC_DisableIRQ	16	static,ignoring_inline_asm
+D:/Nero/Button_test_STM32/Debounce_Button/CMSIS/inc/core_cm4.h:1777:22:__NVIC_ClearPendingIRQ	16	static
+../Src/main.c:11:7:tim10_init	8	static
+../Src/main.c:18:7:exti_init	8	static
+../Src/main.c:31:7:TIM1_UP_TIM10_IRQHandler	8	static,ignoring_inline_asm
+../Src/main.c:43:7:EXTI15_10_IRQHandler	8	static
+../Src/main.c:51:6:main	8	static
