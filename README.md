@@ -14,20 +14,28 @@
 
 > В данном проекте зайдействована пользовательская кнопка B1, подключенная к порту PC13 по обратной логике.
 
-<center><img src="PNG/image.png" alt="Diagram of System Timer (SysTick)" width="200"/></center>
+<p align="center">
+ <img src="PNG/image.png" alt="Diagram of System Timer (SysTick)" width="200"/>
+<p align="center">
 
 ## Конфигурация порта микрокнтроллера на вход 
 
-<center><img src="PNG/image-1.png" alt="Diagram of System Timer (SysTick)" width="500"/></center>
+<p align="center">
+ <img src="PNG/image-1.png" alt="Diagram of System Timer (SysTick)" width="500"/>
+<p align="center">
 
 Порт микроконтроллера может находится в трех состояниях: __высоком__, __низком__ и в состоянии __HiZ__ (высокоимпедансном)
 
 ## Принцип работы Триггера Шмитта 
-<center><img src="PNG/image-3.png" alt="Diagram of System Timer (SysTick)" width="300"/></center>
+<p align="center">
+ <img src="PNG/image-3.png" alt="Diagram of System Timer (SysTick)" width="500"/>
+ <p align="center">
 
 ## Явление дребезга контактов 
 Дребезг представляет собой многократное замыкание и размыкание цепи. В результате на вход микропроцессорного устройства поступает не единичный перепад напряжения, а целая пачка импульсов. Примерная форма сигнала на таких контактах в момент замыкания показана на рисунке. 
-<center><img src="PNG/image-4.png" alt="Diagram of System Timer (SysTick)" width="300"/></center>
+<p align="center">
+ <img src="PNG/image-4.png" alt="Diagram of System Timer (SysTick)" width="300"/>
+<p align="center">
 
  Методы борьбы:
 * Аппаратные 
