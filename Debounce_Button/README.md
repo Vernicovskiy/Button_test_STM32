@@ -38,7 +38,7 @@ void EXTI15_10_IRQHandler(void){
 
 
 <p align="center">
-<img src="PNG/image-1.png" alt="Diagram of System Timer (SysTick)" width="500"/></<p align="center">
+<img src="PNG/image-1.png" alt="Diagram of System Timer (SysTick)" width="700"/></<p align="center">
 
 
 Значение счетчика DWT регистра показало 47 тактов. В программе используется тактирование по умолчанию от `HSI = 16MHz`, селодовательно 47 * (1/16000000) * 10<sup>6</sup> = 2,9375мкс
