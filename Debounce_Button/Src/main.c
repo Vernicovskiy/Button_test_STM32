@@ -10,7 +10,7 @@ uint8_t counter = 0;
 		RCC->APB2ENR |= RCC_APB2ENR_TIM10EN; // тактирование
 		NVIC_EnableIRQ(TIM1_UP_TIM10_IRQn); // глоб прер
 		TIM10->PSC = 16000;// преддел
-		TIM10->ARR	= 10;
+		TIM10->ARR = 10;
 	}
 
 	void exti_init(){
