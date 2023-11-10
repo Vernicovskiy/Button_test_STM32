@@ -38,7 +38,8 @@ void EXTI15_10_IRQHandler(void){
 
 
 <p align="center">
-<img src="PNG/image-4.png" alt="Diagram of System Timer (SysTick)" width="500"/></<p align="center">
+<img src="PNG/image-1.png" alt="Diagram of System Timer (SysTick)" width="500"/></<p align="center">
+
 
 Значение счетчика DWT регистра показало 47 тактов. В программе используется тактирование по умолчанию от `HSI = 16MHz`, селодовательно 47 * (1/16000000) * 10<sup>6</sup> = 2,9375мкс
 
@@ -47,27 +48,27 @@ void EXTI15_10_IRQHandler(void){
 Выполянеяем 5 нажатий/отпусканий кнопки
 
 <p align="center">
-<img src="PNG/image-2.png" alt="Diagram of System Timer (SysTick)" width="400"/></<p align="center">
+<img src="PNG/image.png" alt="Diagram of System Timer (SysTick)" width="400"/></<p align="center">
 
 Сразу видно , что обработчик прерываний увеличил счетчик лишний раз , это свидетельствует о том , что произошел дребезг.
 
 ### Проверка на анализаторе 
 
-![Alt text](PNG/image-5.png)
+![Alt text](image.png)
 
 В моменте нажатия дребезга выявлено не было , а в момент отпускания картина меняется 
 
-![Alt text](PNG/image-6.png)
+![Alt text](image-1.png)
 
 В момент отпускания пришла целая пачка импульсов разной ширины 
 
-![Alt text](PNG/image-7.png)
+![Alt text](image-2.png)
 
 Ширина данного импульса составляет 3 мкс , следовательно обработчик успел его зафиксировать. Как раз из-за него нас счетчик увеличился лишний раз.
 
 Если посмотреть соседние импульсы, то их ширина меньше , чем время за которое обработчик успеет их обработать, поэтому в данном примере они игнорируются.
 
-![Alt text](PNG/image-8.png) 
+![Alt text](image-3.png)
 
 ## Антидребезг по переполнению таймера 
 
@@ -110,13 +111,15 @@ void TIM1_UP_TIM10_IRQHandler(void){
 Повторно выполянеяем 5 нажатий/отпусканий кнопки
 
 <p align="center">
-<img src="PNG/image-9.png" alt="Diagram of System Timer (SysTick)" width="400"/></<p align="center">
+<img src="PNG/image-7.png" alt="Diagram of System Timer (SysTick)" width="400"/></<p align="center">
+
 
 Дребезга не произошло , счетчик посчитал верно 
 ### Проверка на анализаторе
-![Alt text](PNG/image-12.png)
-![Alt text](PNG/image-10.png)
-![Alt text](PNG/image-11.png)
+![Alt text](image-4.png)
+![Alt text](image-5.png)
+![Alt text](image-6.png)
+
 
 Можем сделать вывод , что данный алгоритм позволил нам избежать ненужных срабатываний, которые произошли бы в первой программе.
 
