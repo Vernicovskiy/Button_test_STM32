@@ -6,7 +6,7 @@
 
 	//uint8_t res = 0;
 	uint32_t count = 0;
-	uint32_t ref_count = 3;
+	uint32_t ref_count = 1000;
 	uint32_t state = 0;
 
 
